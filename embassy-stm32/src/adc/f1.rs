@@ -9,6 +9,9 @@ use crate::adc::{Adc, AdcChannel, Instance, SampleTime};
 use crate::time::Hertz;
 use crate::{interrupt, rcc, Peripheral};
 
+mod ringbuffered_f1;
+pub use ringbuffered_f1::{RingBufferedAdc, Sequence};
+
 pub const VDDA_CALIB_MV: u32 = 3300;
 pub const ADC_MAX: u32 = (1 << 12) - 1;
 // No calibration data for F103, voltage should be 1.2v
